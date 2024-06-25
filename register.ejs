@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body class="bg-zinc-900 flex-column">
+    
+    <div id="container" class="font-serif">
+                 <div id="register" class="text-zinc-100 text-6xl text-center  flex-row">
+                    <label class="hover:text-lime-500">S</label>
+                    <label class="hover:text-lime-500">I</label>
+                    <label class="hover:text-lime-500">G</label>
+                    <label class="hover:text-lime-500">N</label>
+                    <label class="hover:text-lime-500">-</label>
+                    <label class="hover:text-lime-500">U</label>
+                    <label class="hover:text-lime-500">P</label>
+                 </div>
+        <form method="post" action="/register">
+            <div class="text-white align-verticle-center mx-[40%] font-serif">
+             <input required class="w-64 h-10 bg-transparent rounded-md shadow-lg text-bold m-2" type="text" placeholder="Username" name="username"><br>
+             <input required class="w-64 h-10 bg-transparent rounded-md shadow-lg text-bold m-2" type="email" placeholder="Email" name="email"><br>
+             <input required class="w-64 h-10 bg-transparent rounded-md shadow-lg text-bold m-2" type="password" placeholder="Password" name="password"><br>
+             <input required class="w-64 h-10 bg-transparent rounded-md shadow-lg text-bold m-2" type="text" placeholder="Name" name="name"><br>
+             <input required class="w-64 h-10 bg-transparent rounded-md shadow-lg text-bold m-2" type="text" placeholder="Pincode" maxlength="6" name="pincode"><br>
+             <button type="submit" class="w-wrap h-wrap bg-green-500 rounded-md align-verticle-center mx-[50%] shadow-lg border-solid border-green-900" id="btn">submit</button>
+            </div>
+            </form>
+    </div>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"
+        <script src="/javascripts/register.js"></script>
+        
+    </form>
+</body>
+</html>

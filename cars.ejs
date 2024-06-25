@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Rooms</title>
+</head>
+<body>
+        <div id="add" class="w-[100vw] h-[100vh] bg-zinc-900  text-white font-serif py-10" >
+            <form method="post" action="/cdetails" enctype="multipart/form-data" >
+                <div class="grid grid-cols-4 gap-4 justify-between">
+                <input type="text" name="clocation" placeholder="Location" class="w-64 h-10 bg-blue-800 rounded-md" required>
+                <input type="text" name="cbrand" placeholder="About car" class="w-64 h-10 bg-blue-800 rounded-md" required>
+                <input type="text" name="crent" placeholder="Rent amount" class="w-64 h-10 bg-blue-800 rounded-md" required>
+                <input type="text" name="contact" placeholder="Contact Number" class="w-64 h-10 bg-blue-800 rounded-md" required>
+                <input type="file" name="cimage" multiple>
+                
+                <input type="submit" class="w-20 h-wrap bg-green-500 rounded-md">
+            </div>
+                <div class="grid grid-cols-2 gap-4 justify-center text-4xl my-[200px] mx-[400px]">
+                </div>
+            </form>
+        </div>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"
+        <script src="/javascripts/rooms.js"></script>
+</body>
+</html>

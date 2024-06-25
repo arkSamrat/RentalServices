@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  class="w-100vw h-100vh bg-zinc-900">
+<div class="flex-column font-serif items-centre mx-[40%]" id="container">
+    <label class="text-white hover:text-lime-500 text-4xl">L</label>
+    <label class="text-white hover:text-lime-500 text-4xl">O</label>
+    <label class="text-white hover:text-lime-500 text-4xl">G</label>
+    <label class="text-white hover:text-lime-500 text-4xl">I</label>
+    <label class="text-white hover:text-lime-500 text-4xl">N</label>
+    <form method="post" action="/login">
+        <input class="w-64 h-10 bg-transparent rounded-md text-bold shadow-lg flex-column justify-center text-white" type="text" placeholder="username" name="username"><br>
+        <input class="w-64 h-10 bg-transparent rounded-md text-bold shadow-lg flex-column justify-center text-white" type="password" placeholder="password" name="password"><br>       
+        <div class="flex">
+        <button type="submit" class="w-wrap h-wrap bg-green-500 rounded-md left text-white text-3xl mx-4 my-1 hover:bg-transparent hover-text-white">Submit</button>
+        
+        <button  class="w-wrap h-wrap bg-green-500 rounded-md flex text-3xl text-white right mx-4 my-1 hover:bg-transparent hover-text-white" onclick="move()">SignUp</button>
+    </div>
+    </form>
+</div>
+
+
+
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"
+        <script src="/javascripts/login.js"></script>
+        <script>
+            let move=()=>{
+                window.location.href="./register.ejs"
+            }
+        </script>
+</body>
+</html>

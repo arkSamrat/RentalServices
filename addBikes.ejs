@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Bikes</title>
+</head>
+<body class="bg-zinc-900">
+        <div id="add" class=" bg-zinc-900  text-white flex justify-center">
+            <form method="post" action="/bdetails" enctype="multipart/form-data" class="flex flex-col justify-center my-10">
+                <input type="text" name="blocation" placeholder="Location"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+                <input type="text" name="bbrand" placeholder="About bike"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+                <input type="text" name="brent" placeholder="rent amount"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+                <input type="text" name="contact" placeholder="Contact Number"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+                
+                <input type="file" name="bimage" required>
+                <input type="submit" value="Submit" class="w-20 h-10 text-2xl bg-green-500 rounded-md m-2">
+            </form>
+        </div>
+
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"
+        <script src="/javascripts/rooms.js"></script>
+
+</body>
+</html>

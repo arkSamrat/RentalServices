@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG-Rooms</title>
+</head>
+<body class="bg-zinc-900">
+    <div id="add" class="w bg-zinc-900  text-white flex justify-center">
+        <form method="post" action="/pgroom" enctype="multipart/form-data" class="flex flex-col justify-center my-10">
+            <input type="text" name="location" placeholder="Location"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+            <input type="text" name="room" placeholder="About room"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+            <input type="text" name="nfp" placeholder="Nearby famous palce"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+            <input type="text" name="rent" placeholder="rent"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+            <input type="text" name="address" placeholder="Address"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+            <input type="text" name="contact" placeholder="Contact NUmber"  class="w-64 h-10 bg-blue-800 rounded-md m-2" required>
+            <input type="file" name="images" multiple required>
+            <input type="submit" class="bg-green-500 h-wrap w-wrap rounded-md">
+        </form>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>

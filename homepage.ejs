@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+</head>
+<body class="w-[100vw] h-[100vh] bg-zinc-900">
+    <div class="w-[100vw] h-[100vh] bg-zinc-900 font-serif flex justify-between grid grid-cols-3">
+        
+    <form method="post" action="/room" class=" p-10">
+        <div  class="grid grid-cols-1 gap-4 ">
+        <label for="Location" class="text-white">Search Rooms On Rent:</label>
+    <input type="text" placeholder="Type Location" name="location">  
+    <input type="submit" class="w-wrap h-wrap bg-green-500 rounded-md">
+</div>
+    </form>
+
+    <form method="post" action="/bike" class="p-10">
+        <div class="grid grid-cols-1 gap-4">
+            <label for="Location" class="text-white">Search Bikes On Rent:</label>
+        <input type="text" placeholder="Type Location" name="blocation">  
+        <input type="submit" class="w-wrap h-wrap bg-green-500 rounded-lg">
+    </div>
+        </form>
+        <form method="post" action="/pgrooms" class=" p-10">
+            <div  class="grid grid-cols-1 gap-4">
+                <label for="Location" class="text-white">Search PGRooms On Rent:</label>
+            <input type="text" placeholder="Type Location" name="plocation">  
+            <input type="submit" class="w-wrap h-wrap bg-green-500 rounded-md">
+        </div>
+            </form>
+        
+            <form method="post" action="/showCars" class=" p-10">
+                <div  class="grid grid-cols-1 gap-4">
+                    <label for="Location" class="text-white">Search Cars On Rent:</label>
+                <input type="text" placeholder="Type Location" name="clocation">    
+                <input type="submit" class="w-wrap h-wrap bg-green-500 rounded-md">
+            </div>
+                </form>
+            
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let typed=document.getElementById("Searchlocation");
+        var typd=typed.value;
+        window.localStorage.setItem(typd);
+        function move(){
+            window.location.href="http://localhost:3000/rooms";  
+        }
+    </script>
+</body>
+</html>

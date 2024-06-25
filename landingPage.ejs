@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-zinc-900 flex flex-col items-center justify-center min-h-screen">
+    <div class="text-center mb-8">
+        <h2 class="text-6xl text-zinc-100 font-serif">EVERYTHING ON RENT</h2>
+    </div>
+
+    <div class="font-mono flex flex-col items-center space-y-4" id="change">
+        <h1 class="text-4xl text-zinc-100 hover:text-green-500 hover:font-serif cursor-pointer" id="flat">Flats</h1>
+        <h1 class="text-4xl text-zinc-100 hover:text-green-500 hover:font-serif cursor-pointer" id="room">Rooms</h1>
+        <h1 class="text-4xl text-zinc-100 hover:text-green-500 hover:font-serif cursor-pointer" id="hrr">Hourly Rental Rooms</h1>
+        <h1 class="text-4xl text-zinc-100 hover:text-green-500 hover:font-serif cursor-pointer" id="bike">Bikes</h1>
+        <h1 class="text-4xl text-zinc-100 hover:text-green-500 hover:font-serif cursor-pointer" id="car">Cars</h1>
+    </div>
+
+    <div class="flex justify-around mt-8 w-full max-w-md">
+        <form method="get" action="/login">
+            <input type="submit" class="w-full h-12 bg-green-500 hover:bg-green-800 text-white text-2xl font-bold font-mono rounded-md cursor-pointer mx-2" value="LOGIN">
+        </form>
+        <form method="get" action="/register">
+            <input type="submit" class="w-full h-12 bg-green-500 hover:bg-green-800 text-white text-2xl font-bold font-mono rounded-md cursor-pointer mx-2" value="REGISTER">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            gsap.from("#flat, #room, #hrr, #bike, #car", {
+                duration: 1.5,
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                ease: "power4.out"
+            });
+
+            gsap.from("h2", {
+                duration: 1.5,
+                opacity: 0,
+                scale: 0.5,
+                ease: "elastic.out(1, 0.5)"
+            });
+
+            gsap.from(".w-full", {
+                duration: 1,
+                opacity: 0,
+                scale: 0.5,
+                delay: 1.5,
+                stagger: 0.2,
+                ease: "back.out(1.7)"
+            });
+
+            
+            const links = document.querySelectorAll("#flat, #room, #hrr, #bike, #car");
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    gsap.to(link, {
+                        duration: 0.5,
+                        scale: 1.1,
+                        ease: "power1.out"
+                    });
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    gsap.to(link, {
+                        duration: 0.5,
+                        scale: 1,
+                        ease: "power1.out"
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

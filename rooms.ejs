@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-zinc-900 text-white">
+
+    <div id="sum" class="min-h-screen flex flex-col items-center justify-center p-4">
+        <% userFind.forEach((room, index) => { %>
+        <div id="room-<%= index %>"
+            class="max-w-4xl w-full bg-neutral-950 rounded-lg shadow-lg mb-8 overflow-hidden transform transition-transform hover:scale-105">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex justify-center items-center">
+                    <div id="img-container-<%= index %>"
+                        class="w-full h-96 overflow-hidden flex items-center justify-start space-x-4 p-4 overflow-x-auto">
+                        <% room.images.forEach((image, imgIndex) => { %>
+                        <img src="/images/Rooms/<%= image %>"
+                            class="room-image object-cover h-80 rounded-lg shadow-md">
+                        <% }); %>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="mb-4">
+                        <label
+                            class="block bg-neutral-600 text-white px-4 py-2 rounded-md capitalize">Location: <%= room.location %></label>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block bg-neutral-700 text-white px-4 py-2 rounded-md">Flat: <%= room.flat %></label>
+                    </div>
+                    <div class="mb-4">
+                        <label
+                            class="block bg-neutral-800 text-white px-4 py-2 rounded-md">Nearby Famous Place: <%= room.nfp %></label>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block bg-neutral-900 text-white px-4 py-2 rounded-md">Rent: <%= room.rent %></label>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block bg-neutral-900 text-white px-4 py-2 rounded-md">Address: <%= room.address %></label>
+                    </div>
+                    <div class="mb-4">
+                        <label
+                            class="block bg-neutral-900 text-white px-4 py-2 rounded-md">Contact Number: <%= room.contact %></label>
+                    </div>
+                    <button onclick="toggleImages(<%=index%>)"
+                        class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded-md">Show Images</button>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+
+    <script>
+        function toggleImages(index) {
+            const images = document.querySelectorAll(`#img-container-${index} .room-image`);
+            images.forEach(img => {
+                img.classList.toggle('hidden');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            gsap.from("[id^='room-']", {
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                ease: "power4.out"
+            });
+        });
+    </script>
+
+</body>
+
+</html>

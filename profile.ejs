@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-zinc-900 text-white flex flex-col items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-4xl p-8 bg-zinc-800 rounded-lg shadow-lg">
+        <div id="container" class="space-y-4">
+            <img src="/images/upload/<%= user.profilePic %>" class="w-20 h-20 rounded-full mx-auto">
+            <label class="block text-center text-2xl font-serif">Name: <%= user.name %></label>
+            <label class="block text-center text-2xl font-serif">Username: <%= user.username %></label>
+            <label class="block text-center text-2xl font-serif">Email: <%= user.email %></label>
+            <label type="password" class="block text-center text-2xl font-serif">Password: <%= '*'.repeat(Math.ceil(user.password.length / 5)) %></label>
+            <label class="block text-center text-2xl font-serif">Pincode: <%= user.pincode %></label>
+        </div>
+
+        <div class="flex justify-around mt-8">
+            <button id="room" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white text-2xl font-bold font-mono rounded-md" onclick="move()">HomePage</button>
+            <button id="add" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white text-2xl font-bold font-mono rounded-md" onclick="addProfilePic()">Update profile pic</button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 font-serif">
+            <form action="/addRoom" method="get" class="space-y-2">
+                <label class="block">Add Rooms/Flat For Rent:</label>
+                <input type="submit" value="Tap" class="w-full px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded-md cursor-pointer">
+            </form>
+            <form action="/addBikes" method="get" class="space-y-2">
+                <label class="block">Add Bikes For Rent:</label>
+                <input type="submit" value="Tap" class="w-full px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded-md cursor-pointer">
+            </form>
+            <form action="/cars" method="get" class="space-y-2">
+                <label class="block">Add Cars For Rent:</label>
+                <input type="submit" value="Tap" class="w-full px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded-md cursor-pointer">
+            </form>
+            <form action="/pgroom" method="get" class="space-y-2">
+                <label class="block">Add Hourly Rental Rooms:</label>
+                <input type="submit" value="Tap" class="w-full px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded-md cursor-pointer">
+            </form>
+        </div>
+
+        <div class="mt-8 text-center">
+            <a href="/show" class="text-green-500 hover:text-green-700 underline">Look what you have added</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            gsap.from("#container img, #container label", {
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                ease: "power4.out"
+            });
+
+            gsap.from("#room, #add", {
+                duration: 1,
+                opacity: 0,
+                scale: 0.5,
+                delay: 1,
+                stagger: 0.2,
+                ease: "back.out(1.7)"
+            });
+
+            gsap.from(".grid form", {
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                delay: 1.5,
+                stagger: 0.2,
+                ease: "power4.out"
+            });
+        });
+
+        function move() {
+            window.location.href = "http://localhost:3000/homepage";
+        }
+
+        function addProfilePic() {
+            window.location.href = "http://localhost:3000/updateProfile";
+        }
+    </script>
+
+</body>
+
+</html>
